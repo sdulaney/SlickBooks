@@ -177,6 +177,19 @@ function db_seed_db() {
     db_populate_transactions();
 }
 
+/*
+* Takes a MySQL result identifier and returns a numerically indexed array of rows, where each row is an associative array.
+* This function was copied from PHP and MySQL Web Development by Welling, Thomson, Chapter 31 - Build a Shopping Cart:
+* https://www.pearson.com/us/higher-education/program/Welling-PHP-and-My-SQL-Web-Development-5th-Edition/PGM38406.html
+*/
+function db_result_to_array($result) {
+    $res_array = array();
+    for ($count = 0; $row = $result->fetch_assoc(); $count++) {
+      $res_array[$count] = $row;
+    }
+    return $res_array;
+ }
+
 db_select_db();
 db_create_table_users();
 db_create_table_accounts();
