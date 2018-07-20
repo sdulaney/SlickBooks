@@ -64,7 +64,7 @@ function db_create_table_transactions() {
     $sql = "show tables like '$table_name'";
     $query_result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($query_result) == 0) {
-        $sql = "create table $table_name (transactionid int unsigned not null auto_increment primary key, accountid int unsigned not null, description char(100) not null, type char(60) not null, payee char(60) not null, amount float(6,2) not null, date date not null, category char(60) not null)";
+        $sql = "create table $table_name (transactionid int unsigned not null auto_increment primary key, accountid int unsigned not null, description char(100) not null, type char(60) not null, payee char(60) not null, amount float(20,2) not null, date date not null, category char(60) not null)";
         $query_result = mysqli_query($conn, $sql);
         if ($query_result === FALSE) {
             echo "<p>Unable to create the table '$table_name'.</p>" . "<p>Error code " . mysqli_errno($conn) . ": " . mysqli_error($conn) . "</p>";
