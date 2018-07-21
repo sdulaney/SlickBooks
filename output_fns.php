@@ -109,4 +109,28 @@ function display_transactions($transaction_array) {
   }
 }
 
+/*
+* Displays the login form.
+*/
+function display_login_form() {
+?>
+  <form action="login.php" method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <h3>Login</h3>
+          <label for="email">Username (Email)
+            <input type="email" id="email" name="email">
+          </label>
+          <label for="password">Password
+            <input type="password" id="password" name="password">
+          </label>
+          <input type="submit" class="button" value="Login">
+        </div>
+      </div>
+    </div>
+  </form>
+<?php
+}
+
 ?>
