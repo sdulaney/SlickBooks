@@ -1,5 +1,7 @@
 <?php
 
+include_once("user_auth_fns.php");
+
 /*
 * Prints an HTML header.
 */
@@ -23,10 +25,23 @@ function do_html_header($title = "") {
                 <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
                 <a class="app-dashboard-logo">SlickBooks</a>
               </div>
+<?php
+  if (check_user()) {
+?>
               <div class="columns shrink app-dashboard-top-bar-actions top-bar-right">
-                <button href="#" class="button hollow">Login</button>
+                <button href="#" class="button hollow">Logout</button>
                 <a href="#" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
               </div>
+<?php
+  } else {
+?>
+              <div class="columns shrink app-dashboard-top-bar-actions top-bar-right">
+                <button id="btn_login" class="button hollow">Login</button>
+                <a href="#" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
+              </div>
+<?php
+  }
+?>
             </div>
             <div class="app-dashboard-body off-canvas-wrapper">
               <div id="app-dashboard-sidebar" class="app-dashboard-sidebar position-left off-canvas off-canvas-absolute reveal-for-medium" data-off-canvas>

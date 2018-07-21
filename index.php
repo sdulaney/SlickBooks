@@ -1,5 +1,6 @@
 <?php
   include_once("slickbooks_fns.php");
+  session_start();
 
   do_html_header("SlickBooks");
   do_html_heading("Expense Transactions");
