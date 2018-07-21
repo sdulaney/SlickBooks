@@ -90,4 +90,23 @@ function do_html_heading($heading) {
 <?php
 }
 
+/*
+* Display all transactions in the array passed in in an HTML table. 
+*/
+function display_transactions($transaction_array) {
+  if (!is_array($transaction_array)) {
+    echo "<p>No transactions have been entered.</p>";
+  } else {
+    echo "<table>";
+    echo "<tr><th>Company</th><th>Account</th><th>Description</th><th>Type</th><th>Payee</th><th>Amount</th><th>Date</th><th>Category</th></tr>";
+    foreach ($transaction_array as $row) {
+      $time = strtotime($row["date"]);
+      $formatted_date = date("m-d-Y", $time);
+      setlocale(LC_MONETARY, 'en_US.UTF-8');
+      echo "<tr><td>" . get_account_owner($row["accountid"]) . "</td><td>" . get_account_name($row["accountid"]) . "</td><td>" . $row["description"] . "</td><td>" . $row["type"]. "</td><td>" . $row["payee"] . "</td><td>" . money_format("%.2n", $row["amount"]) . "</td><td>" . $formatted_date . "</td><td>" . $row["category"] . "</td></tr>";
+    }
+    echo "</table>";
+  }
+}
+
 ?>
