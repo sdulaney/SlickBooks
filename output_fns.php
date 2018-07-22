@@ -29,6 +29,7 @@ function do_html_header($title = "") {
   if (check_user()) {
 ?>
               <div class="columns shrink app-dashboard-top-bar-actions top-bar-right">
+              <button id="btn_new_transaction" class="button hollow">New Transaction</button>
                 <form action="index.php" method="post">
                   <input type="hidden" name="logout" value="logout">
                   <button class="button hollow" type="submit" value="Submit">Logout</button>
