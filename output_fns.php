@@ -245,4 +245,52 @@ function display_transaction_details($transaction_array) {
   }
 }
 
+/*
+* Displays form to register a new user account.
+*/
+function display_register_form() {
+?>
+  <form action="register.php" method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <h3>Register</h3>
+          <label for="name">Name
+            <input type="text" id="name" name="name">
+          </label>
+          <label for="email">Email
+            <input type="email" id="email" name="email">
+          </label>
+          <label for="password">Password
+            <input type="password" id="password" name="password">
+          </label>
+          <label for="confirm_password">Confirm Password
+            <input type="password" id="confirm_password" name="confirm_password">
+          </label>
+          <label for="phone">Phone
+            <input type="tel" id="phone" name="phone">
+          </label>
+          <label for="address">Address
+            <input type="text" id="address" name="address">
+          </label>
+          <label for="city">City
+            <input type="text" id="city" name="city">
+          </label>
+          <label for="state">State
+            <input type="text" id="state" name="state">
+          </label>
+          <label for="zipcode">Zip Code
+            <input type="text" id="zipcode" name="zipcode">
+          </label>
+          <label for="country">Country
+            <input type="text" id="country" name="country">
+          </label>
+          <input type="submit" class="button" value="Submit">
+        </div>
+      </div>
+    </div>
+  </form>
+<?php
+}
+
 ?>
