@@ -132,7 +132,7 @@ function display_transactions($transaction_array) {
 */
 function display_login_form() {
 ?>
-  <form action="login.php" method="post">
+  <form action="index.php" method="post">
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
         <div class="medium-6 cell">
