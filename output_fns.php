@@ -19,7 +19,7 @@ function do_html_header($title = "") {
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
         </head>
         <body>
-          <div class="app-dashboard shrink-medium">
+          <div class="app-dashboard shrink-large">
             <div class="row expanded app-dashboard-top-nav-bar top-bar">
               <div class="columns medium-2 top-bar-left">
                 <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
