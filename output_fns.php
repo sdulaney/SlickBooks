@@ -104,7 +104,7 @@ function do_html_footer() {
 */
 function do_html_heading($heading) {
 ?>
-  <h2 class="text-center"><?php echo htmlspecialchars($heading); ?></h2>
+  <h1 class="h3"><?php echo htmlspecialchars($heading); ?></h1>
 <?php
 }
 

@@ -16,8 +16,8 @@
     logout();
   }
 
-  do_html_header("SlickBooks");
-  do_html_heading("Expense Transactions");
+  do_html_header("SlickBooks Dashboard");
+  do_html_heading("Dashboard");
 
   $transaction_array = get_transactions();
   display_transactions($transaction_array);
