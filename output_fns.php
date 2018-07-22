@@ -24,7 +24,10 @@ function do_html_header($title = "") {
             <div class="row expanded app-dashboard-top-nav-bar top-bar">
               <div class="columns medium-2 top-bar-left">
                 <button data-toggle="app-dashboard-sidebar" class="menu-icon hide-for-medium"></button>
-                <a href="http://www.smccs85.com/~sdulaney/project/" class="app-dashboard-logo">SlickBooks</a>
+                <div class="app-dashboard-logo-container">
+                  <img src="http://www.smccs85.com/~sdulaney/project/public/images/logo.png" id="logo-image">
+                  <a href="http://www.smccs85.com/~sdulaney/project/" class="app-dashboard-logo">SlickBooks</a>
+                </div>
               </div>
 <?php
   if (check_user()) {
