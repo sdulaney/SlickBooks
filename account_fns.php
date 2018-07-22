@@ -26,4 +26,15 @@ function get_account_owner($accountid) {
     return $row["name"];
 }
 
+/*
+* Returns an array of all accounts that belong to the current user.
+*/
+function get_accounts() {
+    $conn = db_connect();
+    $userid = $_SESSION["userid"];
+    $sql = "select * from dulaney_stewart_accounts where userid = $userid";
+    $query_result = mysqli_query($conn, $sql);
+    return db_result_to_array($query_result);
+}
+
 ?>

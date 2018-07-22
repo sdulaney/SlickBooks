@@ -151,4 +151,92 @@ function display_login_form() {
 <?php
 }
 
+/*
+* Displays the form to insert a transaction.
+*/
+function display_insert_transaction_form() {
+?>
+  <form action="insert_transaction.php" method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <h3>Add Transaction</h3>
+          <label for="email">Account
+            <select name="accountid">
+<?php
+  $account_array = get_accounts();
+  foreach ($account_array as $account) {
+    echo "<option value=\"" . htmlspecialchars($account["accountid"]) . "\">" . htmlspecialchars($account["name"]) . "</option>";
+  }
+?>
+            </select>
+          </label>
+          <label for="description">Description
+            <input type="text" id="description" name="description">
+          </label>
+          <label for="type">Type
+            <select id="type" name="type">
+              <option value="Expense">Expense</option>
+              <option value="Check">Check</option>
+              <option value="Vendor Credit">Vendor Credit</option>
+            </select>
+          </label>
+          <label for="payee">Payee
+            <input type="text" id="payee" name="payee">
+          </label>
+          <label for="amount">Amount
+            <input type="number" id="amount" name="amount">
+          </label>
+          <label for="date">Date
+            <input type="date" id="date" name="date">
+          </label>
+          <label for="category">Category
+            <select id="category" name="category">
+              <option value="Advertising & Marketing">Advertising & Marketing</option>
+              <option value="Bank Charges & Fees">Bank Charges & Fees</option>
+              <option value="Car & Truck">Car & Truck</option>
+              <option value="Contractors">Contractors</option>
+              <option value="Insurance">Insurance</option>
+              <option value="Interest Paid">Interest Paid</option>
+              <option value="Job Supplies">Job Supplies</option>
+              <option value="Legal & Professional Services">Legal & Professional Services</option>
+              <option value="Meals & Entertainment">Meals & Entertainment</option>
+              <option value="Office Supplies & Software">Office Supplies & Software</option>
+              <option value="Other Business Expenses">Other Business Expenses</option>
+              <option value="Rent & Lease">Rent & Lease</option>
+              <option value="Repairs & Maintenance">Repairs & Maintenance</option>
+              <option value="Taxes & Licenses">Taxes & Licenses</option>
+              <option value="Travel">Travel</option>
+              <option value="Utilities">Utilities</option>
+            </select>
+          </label>
+          <input type="submit" class="button" value="Save">
+        </div>
+      </div>
+    </div>
+  </form>
+<?php
+}
+
+/*
+* Displays all details for the transaction passed in as an associative array.
+*/
+function display_transaction_details($transaction_array) {
+  if (is_array($transaction_array)) {
+    $time = strtotime($transaction_array["date"]);
+    $formatted_date = date("m-d-Y", $time);
+    setlocale(LC_MONETARY, 'en_US.UTF-8');
+    echo "<table>";
+    echo "<tr><th>Company</th><td>" . get_account_owner($transaction_array["accountid"]) . "</td></tr>";
+    echo "<tr><th>Account</th><td>" . get_account_name($transaction_array["accountid"]) . "</td></tr>";
+    echo "<tr><th>Description</th><td>" . $transaction_array["description"] . "</td></tr>";
+    echo "<tr><th>Type</th><td>" . $transaction_array["type"] . "</td></tr>";
+    echo "<tr><th>Payee</th><td>" . $transaction_array["payee"] . "</td></tr>";
+    echo "<tr><th>Amount</th><td>" . money_format("%.2n", $transaction_array["amount"]) . "</td></tr>";
+    echo "<tr><th>Date</th><td>" . $formatted_date . "</td></tr>";
+    echo "<tr><th>Category</th><td>" . $transaction_array["category"] . "</td></tr>";
+    echo "</table>";
+  }
+}
+
 ?>
