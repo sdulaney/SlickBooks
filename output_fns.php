@@ -34,14 +34,12 @@ function do_html_header($title = "") {
                   <input type="hidden" name="logout" value="logout">
                   <button class="button hollow" type="submit" value="Submit">Logout</button>
                 </form>
-                <a href="#" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
               </div>
 <?php
   } else {
 ?>
               <div class="columns shrink app-dashboard-top-bar-actions top-bar-right">
                 <button id="btn_login" class="button hollow">Login</button>
-                <a href="#" height="30" width="30" alt=""><i class="fa fa-info-circle"></i></a>
               </div>
 <?php
   }
