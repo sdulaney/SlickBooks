@@ -30,4 +30,18 @@ function get_transaction_details($transactionid) {
     return mysqli_fetch_assoc($query_result);
 }
 
+/*
+* Returns an array of transactions filtered by the specified date range.
+*/
+function filter_transaction_by_date_range($transaction_array, $start_date, $end_date) {
+    $result_array = array();
+    foreach ($transaction_array as $row) {
+        // Compare dates as strings in the format Y-m-d
+        if (($row["date"] >= $start_date) && ($row["date"] <= $end_date)) {
+            array_push($result_array, $row);
+        }
+    }
+    return $result_array;
+}
+
 ?>

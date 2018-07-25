@@ -21,6 +21,10 @@
   display_transaction_filter_form();
 
   $transaction_array = get_transactions();
+  // Filter transactions by date range
+  if (!empty($_POST["filter_start_date"]) && !empty($_POST["filter_end_date"])) {
+    $transaction_array = filter_transaction_by_date_range($transaction_array, $_POST["filter_start_date"], $_POST["filter_end_date"]);
+  }
   display_transactions($transaction_array);
   
   do_html_footer();
