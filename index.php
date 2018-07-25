@@ -18,6 +18,7 @@
 
   do_html_header("SlickBooks Dashboard");
   do_html_heading("Dashboard");
+  display_transaction_filter_form();
 
   $transaction_array = get_transactions();
   display_transactions($transaction_array);

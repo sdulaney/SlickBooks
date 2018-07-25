@@ -266,3 +266,11 @@
 .app-dashboard-logo-container {
   margin-left: 2rem;
 }
+
+#transaction-filter-form-submit-btn {
+  margin-top : 1.5rem;
+}
+
+#transaction-filter-form-submit-title {
+  margin-top : 1.5rem;
+}

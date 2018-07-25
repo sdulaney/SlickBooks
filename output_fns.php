@@ -293,4 +293,35 @@ function display_register_form() {
 <?php
 }
 
+/*
+* Displays form to filter transactions.
+*/
+function display_transaction_filter_form() {
+?>
+  <form action="index.php" method="post">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-2 cell">
+          <h2 id="transaction-filter-form-submit-title" class="h6 subheader">Filter by Date Range:</h2>
+        </div>
+        <div class="medium-2 cell">
+          <label for="filter_start_date">Start
+            <input type="date" id="filter_start_date" name="filter_start_date">
+          </label>
+        </div>
+        <div class="medium-2 cell">
+          <label for="filter_end_date">End
+            <input type="date" id="filter_end_date" name="filter_end_date">
+          </label>
+        </div>
+        <div class="medium-2 cell">
+          <button type="submit" id="transaction-filter-form-submit-btn" class="button" value="Search">
+            <i class="fa fa-filter"></i> Filter
+          </button>
+        </div>
+      </div>
+  </form>
+
+<?php
+}
+
 ?>
