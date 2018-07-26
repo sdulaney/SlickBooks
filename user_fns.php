@@ -22,4 +22,13 @@ function get_user_name($userid) {
     return $row["name"];
 }
 
+/*
+* Insert a new user into the database.
+*/
+function insert_user($name, $email, $password, $phone, $address, $city, $state, $zip, $country) {
+    $conn = db_connect();
+    $sql = "insert into dulaney_stewart_users (userid, name, email, password, phone, address, city, state, zip, country) values (null, '$name', '$email', sha1('$password'), '$phone', '$address', '$city', '$state', '$zip', '$country')";
+    $query_result = mysqli_query($conn, $sql);
+}
+
 ?>

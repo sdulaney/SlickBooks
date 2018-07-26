@@ -324,4 +324,26 @@ function display_transaction_filter_form() {
 <?php
 }
 
+/*
+* Displays a success callout.
+*/
+function display_success_callout($heading, $paragraph, $link, $url) {
+  echo "<div class=\"callout success\">";
+  echo "<h5>$heading</h5>";
+  echo "<p>$paragraph</p>";
+  echo "<a class=\"button\" href=\"$url\">$link</a>";
+  echo "</div>";
+}
+
+/*
+* Displays an alert callout.
+*/
+function display_alert_callout($heading, $paragraph, $link, $url) {
+  echo "<div class=\"callout alert\">";
+  echo "<h5>$heading</h5>";
+  echo "<p>$paragraph</p>";
+  echo "<a class=\"button\" href=\"$url\">$link</a>";
+  echo "</div>";
+}
+
 ?>
