@@ -11,6 +11,16 @@ function insert_account($userid, $name, $type) {
 }
 
 /*
+* Returns an array of all accounts in the database.
+*/
+function get_all_accounts() {
+    $conn = db_connect();
+    $sql = "select * from dulaney_stewart_accounts";
+    $query_result = mysqli_query($conn, $sql);
+    return db_result_to_array($query_result);
+}
+
+/*
 * Returns the account name for an accountid.
 */
 function get_account_name($accountid) {

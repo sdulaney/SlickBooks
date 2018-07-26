@@ -73,7 +73,7 @@ function do_html_header($title = "") {
                     <li><a href="#" class="is-active">
                       <i class="large fa fa-credit-card"></i><span class="app-dashboard-sidebar-text">Transactions</span>
                     </a></li>
-                    <li><a>
+                    <li><a href="http://www.smccs85.com/~sdulaney/project/accounts.php">
                       <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Accounts</span>
                     </a></li>
                     <li><a>
@@ -112,6 +112,22 @@ function do_html_heading($heading) {
 ?>
   <h1 class="h3"><?php echo htmlspecialchars($heading); ?></h1>
 <?php
+}
+
+/*
+* Display all accounts in the array passed in in an HTML table. 
+*/
+function display_accounts($account_array) {
+  if (!is_array($account_array)) {
+    echo "<p>No accounts have been entered.</p>";
+  } else {
+    echo "<table>";
+    echo "<tr><th>Company</th><th>Name</th><th>Type</th></tr>";
+    foreach ($account_array as $row) {
+      echo "<tr><td>" . get_account_owner($row["accountid"]) . "</td><td>" . $row["name"] . "</td><td>" . $row["type"] . "</td></tr>";
+    }
+    echo "</table>";
+  }
 }
 
 /*
