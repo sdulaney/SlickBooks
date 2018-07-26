@@ -44,4 +44,15 @@ function filter_transaction_by_date_range($transaction_array, $start_date, $end_
     return $result_array;
 }
 
+/*
+* Returns the transaction description for a transactionid.
+*/
+function get_transaction_description($transactionid) {
+    $conn = db_connect();
+    $sql = "select description from dulaney_stewart_transactions where transactionid = $transactionid";
+    $query_result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($query_result);
+    return $row["description"];
+}
+
 ?>

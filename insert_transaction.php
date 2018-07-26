@@ -14,6 +14,7 @@
 
         do_html_header("Transaction Added");
         do_html_heading("Transaction Added");
+        display_success_callout("Your Transaction \"" . get_transaction_description($transactionid) . "\" Has Been Added", "Please return to the dashboard for a list of transactions and accounts.", "Return to Dashboard", "http://www.smccs85.com/~sdulaney/project/");
         display_transaction_details(get_transaction_details($transactionid));
         do_html_footer();
     }
