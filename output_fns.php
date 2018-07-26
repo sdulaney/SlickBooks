@@ -70,7 +70,7 @@ function do_html_header($title = "") {
                 </div>
                 <div class="app-dashboard-sidebar-inner">
                   <ul class="menu vertical">
-                    <li><a href="#" class="is-active">
+                    <li><a href="http://www.smccs85.com/~sdulaney/project/" class="is-active">
                       <i class="large fa fa-credit-card"></i><span class="app-dashboard-sidebar-text">Transactions</span>
                     </a></li>
                     <li><a href="http://www.smccs85.com/~sdulaney/project/accounts.php">
