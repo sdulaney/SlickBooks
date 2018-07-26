@@ -12,3 +12,6 @@ $('#btn_new_transaction').on('click', function() {
 $('#btn_register').on('click', function() {
   window.location.href = "http://www.smccs85.com/~sdulaney/project/register_form.php";
 });
+$('#btn_new_account').on('click', function() {
+  window.location.href = "http://www.smccs85.com/~sdulaney/project/insert_account_form.php";
+});

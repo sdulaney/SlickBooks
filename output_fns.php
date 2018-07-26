@@ -225,6 +225,35 @@ function display_insert_transaction_form() {
 }
 
 /*
+* Displays the form to insert an account.
+*/
+function display_insert_account_form() {
+?>
+  <form action="insert_account.php" method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <h3>Add Account</h3>
+          <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"]; ?>">
+          <label for="name">Name
+            <input type="text" id="name" name="name">
+          </label>
+          <label for="type">Type
+            <select id="type" name="type">
+              <option value="Bank">Bank</option>
+              <option value="Credit Card">Credit Card</option>
+              <option value="Other Current Assets">Other Current Assets</option>
+            </select>
+          </label>
+          <input type="submit" class="button" value="Save">
+        </div>
+      </div>
+    </div>
+  </form>
+<?php
+}
+
+/*
 * Displays all details for the transaction passed in as an associative array.
 */
 function display_transaction_details($transaction_array) {

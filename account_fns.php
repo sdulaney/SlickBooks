@@ -1,6 +1,16 @@
 <?php
 
 /*
+* Insert a new account into the database. Returns the accountid of the record inserted.
+*/
+function insert_account($userid, $name, $type) {
+    $conn = db_connect();
+    $sql = "insert into dulaney_stewart_accounts (accountid, userid, name, type) values (null, $userid, '$name', '$type')";
+    $query_result = mysqli_query($conn, $sql);
+    return mysqli_insert_id($conn);
+}
+
+/*
 * Returns the account name for an accountid.
 */
 function get_account_name($accountid) {
