@@ -76,7 +76,7 @@ function do_html_header($title = "") {
                     <li><a href="http://www.smccs85.com/~sdulaney/project/accounts.php">
                       <i class="large fa fa-institution"></i><span class="app-dashboard-sidebar-text">Accounts</span>
                     </a></li>
-                    <li><a>
+                    <li><a href="http://www.smccs85.com/~sdulaney/project/users.php">
                       <i class="large fa fa-users"></i><span class="app-dashboard-sidebar-text">Users</span>
                     </a></li>
                     </ul>
@@ -112,6 +112,22 @@ function do_html_heading($heading) {
 ?>
   <h1 class="h3"><?php echo htmlspecialchars($heading); ?></h1>
 <?php
+}
+
+/*
+* Display all users in the array passed in in an HTML table. 
+*/
+function display_users($user_array) {
+  if (!is_array($user_array)) {
+    echo "<p>No users have been entered.</p>";
+  } else {
+    echo "<table>";
+    echo "<tr><th>Name</th><th>Email</th><th>Phone</th><th>Address</th><th>City</th><th>State</th><th>Zip Code</th><th>Country</th></tr>";
+    foreach ($user_array as $row) {
+      echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["phone"] . "</td><td>" . $row["address"] . "</td><td>" . $row["city"] . "</td><td>" . $row["state"] . "</td><td>" . $row["zip"] . "</td><td>" . $row["country"] . "</td></tr>";
+    }
+    echo "</table>";
+  }
 }
 
 /*
